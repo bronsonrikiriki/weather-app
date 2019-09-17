@@ -1,0 +1,21 @@
+{
+	"coord":
+		{"lon":175.28,"lat":-37.79},
+	"weather":
+		[{"id":500,"main":"Rain","description":"light rain","icon":"10d"}],
+	"base":"stations","main":
+		{"temp":288.79,"pressure":1013,"humidity":80,"temp_min":287.59,"temp_max":290.37},
+	"wind":
+		{"speed":5.81,"deg":305,"gust":8.05},
+	"rain":
+		{"3h":0.625},
+	"clouds":
+		{"all":48},
+	"dt":1568348504,
+	"sys":
+		{"type":3,"id":2002030,"message":0.0068,"country":"NZ","sunrise":1568312627,"sunset":1568354807},
+	"timezone":43200,
+	"id":2190324,
+	"name":"Hamilton",
+	"cod":200
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather App</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- Set up search box -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="wrapper">
+            <div class="search-box">
+                <input type="text" placeholder="Search" class="input">
+                <div class="btn">
+                     <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Set up weather information -->
+        <div class="location">
+            <h1 class="city">City</h1>
+            <canvas class="icon" width="128" height="128"></canvas>
+        </div>
+        <div class="temperature">
+            <div class="degree-section">
+                <h1 class="temperature-degree">25</h1>
+                <span class="degree-symbol">C</span>
+            </div>
+            <div class="conditions">very cold</div>
+        </div>
+        <script src="app.js"></script>
+        <script src="skycons.js"></script>
+    </body>
+</html>
