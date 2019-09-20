@@ -36,15 +36,6 @@ window.addEventListener("load", () => {
             document.querySelector(".humidity-text").textContent = humidity + "%";
             document.querySelector(".wind-speed-text").textContent = speed + "m/s";
 
-            temperatureDegree.addEventListener("click", () => {
-                if(temperatureSpan.textContent === "F"){
-                    temperatureSpan.textContent = "C";                
-                }
-                else{
-                    temperatureSpan.textContent = "F";
-                }
-            });
-
             // Set Icon
             setIcons(icon, document.querySelector(".weather-icon"));
         });
@@ -81,6 +72,21 @@ window.addEventListener("load", () => {
         skycons.play();
         return skycons.set(iconID, Skycons[currentIcon]);
     }
+
+    temperatureDegree.addEventListener("click", () => {
+        if(temperatureSpan.innerHTML === "°F"){
+            temperatureSpan.innerHTML = "°C";
+            let tempF = document.querySelector(".temperature-degree").innerHTML;
+            let tempC = (tempF - 32) * (5/9);
+            document.querySelector(".temperature-degree").textContent = tempC;
+        }
+        else{
+            temperatureSpan.innerHTML = "°F";
+            let tempC = document.querySelector(".temperature-degree").innerHTML;
+            let tempF = (tempC * (9/5)) + 32;
+            document.querySelector(".temperature-degree").textContent = tempF; 
+        }
+    });
 
     apiCall();
 });
