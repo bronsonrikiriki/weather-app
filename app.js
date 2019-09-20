@@ -25,12 +25,16 @@ window.addEventListener("load", () => {
         .then(data => {
             console.log(data);
 
-            const {temp, temp_min, temp_max} = data.main;
+            const {temp, pressure, humidity} = data.main;
             const {description, icon} = data.weather[0];
+            const {speed} = data.wind;
 
             temperature.textContent = Math.round((temp - 273.15) * 10) / 10;        
-            weatherConditions.textContent = description;
+            weatherConditions.textContent = description.toUpperCase();
             document.querySelector(".city").textContent = data.name;
+            document.querySelector(".pressure-text").textContent = pressure + "hpa";
+            document.querySelector(".humidity-text").textContent = humidity + "%";
+            document.querySelector(".wind-speed-text").textContent = speed + "m/s";
 
             temperatureDegree.addEventListener("click", () => {
                 if(temperatureSpan.textContent === "F"){
@@ -42,7 +46,7 @@ window.addEventListener("load", () => {
             });
 
             // Set Icon
-            setIcons(icon, document.querySelector(".icon"));
+            setIcons(icon, document.querySelector(".weather-icon"));
         });
     }
 
@@ -77,13 +81,6 @@ window.addEventListener("load", () => {
         skycons.play();
         return skycons.set(iconID, Skycons[currentIcon]);
     }
-        
-    // jQuery code for search button
-    $(".btn").click(function(){
-        $(".input").toggleClass("active").focus;
-        $(this).toggleClass("animate");
-        $(".input").val("");
-    });
 
     apiCall();
 });
